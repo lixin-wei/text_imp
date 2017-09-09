@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*导航栏*/
+.navbar-fixed-top .navbar-collapse {
+  max-height: none; }
+
+/*图标右边距*/
+.nav .fa, .dropdown-menu .fa {
+  margin-right: 8px; }
+
+.caret {
+  margin-left: 5px; }
+
+.navbar-brand {
+  padding: 5px 5px; }
+
+.subhead-row {
+  padding: 0; }
+
+body > .container {
+  margin-top: 60px; }
+
+button.form-control {
+  box-shadow: none; }
+
+form {
+  display: none; }
+
+.field-label {
+  width: 100px;
+  display: inline-block;
+  margin: 0 10px; }
+
+/*# sourceMappingURL=index.css.map */

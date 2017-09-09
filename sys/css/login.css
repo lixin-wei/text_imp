@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-05-16 21:06:13
+ * @version $Id$
+ */
+body {
+
+	background-image: url(../../img/bgimg2.png);
+}
+.ui {
+	position: relative;
+}
+/*导航栏*/
+.navbar-fixed-top .navbar-collapse {
+    max-height: none;
+}
+/*导航栏图标右边距*/
+.nav .fa, .dropdown-menu .fa {
+    margin-right: 8px;
+}
+/*----------------------------------------------标题栏 ---------------------------------------*/
+#logo {
+
+/* 	position: absolute;
+position: relative;
+top: 5px;	
+padding-left: calc(55% - 550px);  */
+	width: 40px;	
+	height: 40px;
+}
+.head-bt li {
+	margin-left: 20px;
+	font-size: 20px;
+	color: white;
+}
+.head a {
+	font-size: 16px;
+	padding:0;	padding: 5px 5px;
+}
+.head-menu {
+	margin-top: 5px;
+	width: 60px;
+	float: right
+}
+
+/*width<1000px 右侧下拉框*/
+.dropdown button {
+	height: 35px;
+}
+.dropdown button span {
+	height: 35px;
+	line-height: 5px;
+	color: #2e4667;
+}
+.head {
+	/*height: 50px;*/
+	color: white;
+	line-height: 50px;
+	font-size: 18px;	/*padding-left: calc(55% - 560px); */
+}
+.head-lg{
+	margin-right: 12px;
+}
+.head-si{
+	margin-right: 8px;
+}
+.login-button {
+    margin-top: 10%;
+}
+/*媒体查询以width： 1000px 为界限*/
+@media(min-width:1000px) {
+	
+	.main-loginWindow {
+		/*float: right;*/
+        width: 35%;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		height: 100%;
+	}
+	.main-text {
+		color: white;
+		width: 55%;/* 		padding-left: calc(55% - 550px); 
+		padding-right: 50px; */
+		padding-top: 150px;
+		padding-bottom: 100px;		/*background-color: black;*/
+		height: 100%;
+	}
+	.main-loginWindow-box {
+        background-color: white;
+		width: 80%;
+		height: 350px;
+		max-width: 425px;
+		min-width: 350px;
+		margin-left: 41%;
+		/*margin-right: 25%;*/
+		padding-top: 30px;
+		border-radius: 5px;
+	}
+}
+@media(max-width:1000px) {
+	.main-text {
+		padding-top: 100px;
+		color: white;
+	}
+	.main-text p {
+		margin: 0;
+	}
+	.main-loginWindow-box {
+        background-color: white;
+		width: 80%;
+		height: 380px;
+		max-width: 425px;
+				padding-top: 30px;
+		min-width: 350px;
+		border-radius: 5px;
+		margin: auto;
+	}
+	.main-loginWindow {
+
+		/*width: 100%;*/
+		padding-top: 100px;
+		padding-bottom: 100px;		/*height: px;*/
+		margin: auto;
+	}
+	.smbt {
+		padding-left: 60%;
+	}
+}
+
+/*---------------------------描述文字---------------------------------*/
+.main-text p {
+	font-size: 22px;
+	word-break: break-all;
+	text-indent: 2em;
+	/* font-family: "黑体"; */
+}
+
+/*------------------------------登录窗口---loginWindow-------------------------------*/
+
+/*按钮*/
+.form-button {
+	background-color: #2ab452;
+	color: white;
+	width: 100%;
+	border-radius: 3px;
+}
+.btn:hover, .btn:focus, .btn:active,.btn:visited {
+		background-color: #2ab452;
+	text-decoration: none;
+	color: white;
+}
+.btn {
+	margin-left: 10%;
+	/*margin-top: 10%;*/
+	font-size: 20px;
+	width: 80%;
+	height: 10%;
+	min-height: 25px;
+		background-color: #2ab452;
+}
+.btn-box
+{
+	width: ;
+}
+.btn-a{
+}
+/*输入框相关*/
+.form {
+	position: relative;
+}
+.form-label {
+	/*padding-left: 10px;*/
+	/*padding-left: 5%;*/
+	/*width: 340px;*/
+	margin-top: 6%;
+}
+.form-control {
+	margin: auto;
+	width: 80%;
+	height: 40px;
+	min-height: 25px;
+}
+.label-text
+{
+	margin-left: 10%;
+}
+.control-label
+{
+	text-align: left;
+}
+/*     登录时验证码处   */
+.code-img{
+	width: 40%;
+	height: 100%; 
+	margin-left: 10%;
+}
+.signin-button{
+	margin-top: 30px;
+}
+.signup-button{
+	margin-top: -10px;
+}
+.signin-button a{
+	color: white;
+}
+.form-control1 {
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	/*margin: auto;*/
+	width: 55%;
+	height: 40px;
+	min-height: 25px;
+	display: flex;
+}
+/*验证码*/
+.label-code
+{
+	width: 80%;
+	height: 40px;
+	margin: auto;
+	display: flex;
+}
+.label-admin
+{
+	width: 80%;
+	height: 40px;
+	margin: auto;
+	}
+.label-admin a 
+{
+	/*width: 80%;*/
+	/*height: 40px;*/
+	margin: auto;
+	float: right;
+}
+.form-mention {
+	margin-top: 1.5%;
+	margin-left: 10%;
+	width: 80%;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.form-mention2 {
+	text-align: center;
+	text-indent: 2em;
+	margin-top: 1.5%;
+	margin-left: 10%;
+	width: 80%;
+	font-size: 12px;
+	word-break: break-all;
+}
+.label-code>a
+{
+	float: right;
+}
+.form>td>ul
+{
+	float: right;
+	text-align: right;
+}
+.form-group
+{
+	position: relative;
+}
+.password {
+	position: relative;
+}
+
+/*signUp.html 中输入错误提示框*/
+.input-item-error {
+
+	/*width: 120px;*/
+	position: absolute;
+	right: 55px;
+	top: 35px;
+	text-align: left;
+	color: #fb7561;
+	visibility: hidden;
+	/*background-color: red;*/
+}
+/*    Error 提示框*/
+.input-item-error span {
+	margin-right: 2px;
+}
