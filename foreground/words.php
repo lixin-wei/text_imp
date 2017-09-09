@@ -26,46 +26,6 @@
         <?php require("foreground/nav.php"); ?>
         <!-- 侧边栏 -->
          <div class="" id="sidebar">
-            <!-- 选择的app -->
-            <div class="hidden-xs" id="app-picker">
-                <!-- 侧边栏目 -->
-                <div class="app-ap" title="wechat">
-                    <img src="<?php echo $app_cur->icon ?>">
-                    <div class="app-ap-details">
-                        <div class="app-ap-title"><?php echo $app_cur->app_name ?></div>
-                        <div class="app-ap-info">
-                            <i class="fa fa-apple"></i>&nbsp<?php echo $app_cur->store ?>
-                        </div>
-                    </div>
-                    <i class="fa fa-caret-right app-ap-caret"></i>
-                </div>
-                <!-- 侧边隐藏的盒子 -->
-                <div class="app-picker-slide">
-                    <!-- 盒子中的搜索栏 -->
-                        <div class="app-picker-slide-search">
-                            <input type="search" class="form-control" placeholder="根据应用名称或商店名称筛选应用">
-                            <i class="fa fa-search"></i>    
-                            <button type="button" class="btn"><a href="#">+</a></button> 
-                        </div>
-<?php
-                    for ($i=0; $i<$app_cnt; ++$i) {
-?>
-                        <a href="?app=<?php echo $app[$i]->app_id ?>" style="text-decoration:none">
-                            <div class="app-ap" title="wechat">
-                                <img src="<?php echo $app[$i]->icon ?>">
-                                <div class="app-ap-details">
-                                    <div class="app-ap-title"><?php echo $app[$i]->app_name ?></div>
-                                    <div class="app-ap-info">
-                                        <i class="fa fa-apple"></i>&nbsp<?php echo $app[$i]->store ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-<?php
-                    }
-?>
-                </div>
-            </div>
             <!-- 侧边栏导航 -->
             <?php require("foreground/left-nav.php"); ?>
         </div>

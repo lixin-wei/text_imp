@@ -26,56 +26,6 @@
         <?php require("foreground/nav.php") ?>  
     <!-- 侧边栏 -->
     <div class="" id="sidebar">
-        <!-- 选择的app -->
-        <div class="hidden-xs" id="app-picker">
-            <!-- 侧边栏目 -->
-            <div class="app-ap" title="wechat">
-                <img src="img/icon/wechat.png">
-                <div class="app-ap-details">
-                    <div class="app-ap-title">微信</div>
-                    <div class="app-ap-info">
-                        <i class="fa fa-apple"></i>&nbspiOS
-                    </div>
-                </div>
-                <i class="fa fa-caret-right app-ap-caret"></i>
-            </div>
-            <!-- 侧边隐藏的盒子 -->
-            <div class="app-picker-slide">
-                <!-- 盒子中的搜索栏 -->
-                <div class="app-picker-slide-search">
-                    <input type="search" class="form-control" placeholder="根据应用名称或商店名称筛选应用">
-                    <i class="fa fa-search"></i>
-                    <button type="button" class="btn"><a href="#">+</a></button>
-                </div>
-                 <div class="app-ap" title="wechat">
-                            <img src="img/icon/wechat.png">
-                            <div class="app-ap-details">
-                                <div class="app-ap-title">微信</div>
-                                <div class="app-ap-info">
-                                    <i class="fa fa-apple"></i>&nbspiOS
-                                </div>
-                            </div>
-                        </div>
-                        <div class="app-ap" title="Neteasecloudmusic">
-                            <img src="img/icon/Neteasecloudmusic.png">
-                            <div class="app-ap-details">
-                                <div class="app-ap-title">网易云音乐</div>
-                                <div class="app-ap-info">
-                                    <i class="fa fa-android"></i>&nbspAndroid
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="app-ap" title="weibo">
-                            <img src="img/icon/weibo.png">
-                            <div class="app-ap-details">
-                                <div class="app-ap-title">微博</div>
-                                <div class="app-ap-info">
-                                    <i class="fa fa-apple"></i>&nbspiOS
-                                </div>
-                            </div>
-                        </div>
-            </div>
-        </div>
         <!-- 侧边栏导航 -->
         <?php require("foreground/left-nav.php") ?>  
     </div>

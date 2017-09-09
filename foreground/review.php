@@ -124,32 +124,6 @@
                 </form>
 
             </div>
-            
-            <div class="content-panel container">
-              <div class="row">
-
-              <!-- 总览 -->
-                <div class="review-count col-sm-2">
-
-                  <span class = 'review-stat-label' >评论数</span>
-                  <span class = 'review-stat-label-mega'>22,398</span>
-                </div>
-                <div class="review-rating-avg col-sm-2">
-                  <div class="review-stat-label">平均评分</div>
-                  <div class="review-stat-star"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
-                  <div class="review-stat-label">3.0</div>
-                </div>
-                <!-- 评分分布 -->
-                <div class="review-stat-label col-sm-4 hidden-xs">
-                    <div id="rating-breakdown" class="echarts"></div>                    
-                </div>
-                <!-- 评分分布按百分比 -->
-                <div class="review-emotion col-sm-4 hidden-xs">
-                    <div id="sentimentchart" class="echarts"></div>                   
-                </div>
-              </div>
-              
-            </div>
                <!-- review实例head -->
             <div class="review-details-heading container">
              
