@@ -35,61 +35,7 @@
             <div id="content-phase">
                 <span>可视化展示用户评论的情绪分析结果与趋势。</span>
             </div>
-            <div class="visible-xs">
-                <div class="content-miniinputs">
-                    <button class="btn btn-default content-miniinputs-filter">                    
-                        <i class="fa fa-filter ">&nbsp筛选</i>  
-                    </button> 
-                    <button class="btn btn-default" id="slidebar-in">
-                        <i class=" visible-xs fa fa-angle-left"></i>
-                    </button>
-                </div>                
-            </div>  
-            <div class="content-inputs">
-                <div class="content-inputs-head visible-xs">
-                    <h1>筛选<i class="fa fa-times filter-dismis"></i></h1>
-                </div>
-                <div class="content-inputs-col content-inputs-search">
-                   <input type="search" class="form-control" placeholder="关键字搜索">                    
-                   <i class="fa fa-search"></i>
-                </div> 
-                <div class="btn-group content-inputs-col" id="col-date" value="最后一年">
-                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                       <i class="fa fa-calendar input-icon"></i>
-                       <span class="inputs-option"></span>
-                        <span class="caret input-caret"></span>
-                   </button>
-                </div>
-                <div class="btn-group content-inputs-col" id="col-country" value="中国">
-                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                   <i class="fa fa-globe input-icon"></i>
-                   <span class="inputs-option">中国</span>
-                    <span class="caret input-caret"></span>
-                   </button>
-                   <ul class="dropdown-menu" role="menuitem">
-                      <li><a href="#">中国</a></li>
-                      <li><a href="#">美国</a></li>
-                      <li><a href="#">日本</a></li>
-                   </ul>
-                </div>
-                <div class="btn-group content-inputs-col" id="col-version" value="所有版本">
-                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                   <i class="fa fa-bookmark input-icon"></i>
-                   <span class="inputs-option">所有版本</span>
-                    <span class="caret input-caret"></span>
-                   </button>
-                   <ul class="dropdown-menu" role="menuitem">
-                      <li><a href="#">所有版本</a></li>
-                      <li><a href="#">6.5.7</a></li>
-                      <li><a href="#">6.5.6</a></li>
-                      <li><a href="#">6.5.5</a></li>
-                      <li><a href="#">6.5.4</a></li>
-                      <li><a href="#">6.5.3</a></li>
-                   </ul>
-                </div>                
-                <div class="content-inputs-col" id="col-clearall"><a href="#">清除</a></div>
-            </div>
-
+            <hr>
             <div class="content-panel">
                 <div class="row">
                     <div class="col-sm-12">

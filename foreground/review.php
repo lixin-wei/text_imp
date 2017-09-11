@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="sys/css/review.css">
     </head>
     <body>
-		<?php require("foreground/nav.php") ?>  
+		<?php require("foreground/nav.php") ?>
         <div class="content container">
                 <div class="app-title-bar">
                 <span class="app-title-review"><p>评论</p></span>
