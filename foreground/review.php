@@ -46,17 +46,26 @@
                     <h1>筛选<i class="fa fa-times filter-dismis"></i></h1>                    
                 </div>
                 <form action="" id="filter_form">
-
+                    <input type="hidden" name="request_id" value="<?php echo $request_id ?>">
                     <input type="hidden" name="date_start" value="<?php echo $date_start ?>">
                     <input type="hidden" name="date_end" value="<?php echo $date_end ?>">
                     <div class="btn-group content-inputs-col" id="col-date">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <button type="button"
+                                class="btn btn-default dropdown-toggle"
+                                data-toggle="dropdown"
+                                <?php if(!$request_info['review_date']) echo "disabled"; ?>
+                        >
                             <i class="fa fa-calendar input-icon"></i>
-                            <span class="inputs-option"></span>
-                            <span class="caret input-caret"></span>
+                            所有日期
                         </button>
                     </div>
-                    <select name="location" id="location" class="selectpicker content-inputs-col" data-width="200px">
+
+                    <select name="location"
+                            id="location"
+                            class="selectpicker content-inputs-col"
+                            data-width="200px"
+                            <?php if(!$request_info['location']) echo "disabled"; ?>
+                    >
                         <option value="" data-icon="fa fa-globe">
                             所有地区
                         </option>
@@ -69,7 +78,11 @@
                         <?php endforeach; ?>
                     </select>
                     <!-- 版本选择 -->
-                    <select name="version" id="version" class="selectpicker content-inputs-col" data-width="200px">
+                    <select name="version" id="version"
+                            class="selectpicker content-inputs-col"
+                            data-width="200px"
+                            <?php if(!$request_info['version']) echo "disabled"; ?>
+                    >
                         <option value="" data-icon="fa fa-flag">
                             所有版本
                         </option>
@@ -78,45 +91,6 @@
                                 <?php if($ver[0]==$version) echo "selected"; ?>
                             >
                                 <?php echo $ver[0]?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <!-- 评分选择 -->
-                    <select name="rate" id="rate" class="selectpicker content-inputs-col" data-width="200px">
-                        <option value="0" data-icon="fa fa-star-o">
-                            所有评分
-                        </option>
-                        <?php for($i=5 ; $i>=1 ; --$i): ?>
-                            <option value="<?php echo $i ?>"
-                                    data-content = "<?php
-                                    for($j=0 ; $j<$i ; ++$j) {
-                                        echo "<i class = 'fa fa-star'></i>";
-                                    }
-                                    for($j=0 ; $j<5-$i ; ++$j) {
-                                        echo "<i class = 'fa fa-star-o'></i>";
-                                    }
-                                    ?>"
-                                <?php
-                                if($rate == $i) echo "selected";
-                                ?>
-                            >
-                            </option>
-                        <?php endfor ?>
-                    </select>
-                    <!-- App选择 -->
-                    <select name="app_id" id="app_id" class="selectpicker content-inputs-col" data-width="200px">
-                        <?php foreach ($app_list as $app): ?>
-                            <option
-                                    value="<?php echo $app['app_id'] ?>"
-                                <?php if($app['app_id']==$app_id)echo "selected"?>
-                                <?php
-                                if($app['store']=="iOS") echo "data-icon=\"fa fa-apple\"";
-                                else echo "data-icon=\"fa fa-android\"";
-                                ?>
-                            >
-                                <?php
-                                echo $app['app_name'];
-                                ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -140,26 +114,37 @@
 			<!-- review实例左栏 -->
 				<div class="row">
 			    	<div class="review-basic-attributes col-sm-2">
-						<span class="review-rating-star">
-                        <?php
-                            for ($j = 0; $j < $review[$i]->rate; $j++)
-                                echo '<i class="fa fa-star"></i>';
-                        for ($j = 0; $j < 5-$review[$i]->rate; $j++)
-                            echo '<i class="fa fa-star-o"></i>';
-                        ?>
+                        <span class="review-country"><i class="fa fa-globe review-logo"></i>
+                            地区：
+                            <?php
+                            if($request_info['location'])
+                                echo $review[$i]->location;
+                            else
+                                echo "缺少数据"
+                            ?>
                         </span>
-						<!-- <div class="review-text"> -->
-						<span class="review-country"><i class="fa fa-globe review-logo"></i><?php echo $review[$i]->location ?></span>
-						<span class="review-version"><i class="fa fa-bookmark review-logo"></i><?php echo $review[$i]->version ?></span>
-						<span class="review-user"><i class="fa fa-user review-logo-end"></i><u><?php echo $review[$i]->author ?></u></span>
+                        <span class="review-version"><i class="fa fa-bookmark review-logo"></i>
+                            版本：
+                            <?php
+                            if($request_info['version'])
+                                echo $review[$i]->version;
+                            else
+                                echo "缺少数据"
+                            ?>
+                        </span>
+                        <span class="review-version"><i class="fa fa-clock-o review-logo"></i>
+                            时间：
+                            <?php
+                            if($request_info['review_date'])
+                                echo $review[$i]->review_date;
+                            else
+                                echo "缺少数据"
+                            ?>
+                        </span>
 			    	</div>
 			    	<!-- review实例右栏 -->
 					<div class="review-content col-sm-10">
 			    		<div class="review-primary-content">
-			        		<div class="review-headline">
-			            		<span class = ''><b><?php echo $review[$i]->title ?></b></span>
-			            		<span class="review-date-time"><?php echo $review[$i]->review_date ?></span>
-			        		</div>
 							<div class="review-body"><span><?php echo $review[$i]->content ?></span></div>
 							<div class="review-translated">
 								<!-- <div><span class="review-date">Translated</span></div> -->

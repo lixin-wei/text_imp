@@ -28,31 +28,14 @@ $(function() {
     $(".filter-dismis").on("click", function(){ 
         $(".content-inputs").removeClass("filter-transform");
     });
-    var start = $("input[name=date_start]").val();
-    var end = $("input[name=date_end]").val();
-    if(start==="") {
-        start = moment().subtract(29, 'days');
-        end = moment();
-    }
-    else {
-        start = moment(start);
-        end = moment(end);
-    }
-    function update_date_input(start, end) {
-        var start_fmt = start.format('YYYY-MM-DD');
-        var end_fmt = end.format('YYYY-MM-DD');
-        $('#col-date .inputs-option').html(start_fmt + ' - ' + end_fmt);
-        $filter_form.find("input[name=date_start]").val(start_fmt);
-        $filter_form.find("input[name=date_end]").val(end_fmt);
-        console.log(start_fmt + ' - ' + end_fmt);
-    }
-    function cb(start, end) {
-        update_date_input(start, end);
-        $filter_form.submit();
-    }
-    $('#col-date>button').daterangepicker({
-        startDate: start,
-        endDate: end,
+
+    //日期选择框初始化
+    var $date_picker = $('#col-date>button');
+    $date_picker.daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: '所有日期'
+        },
         ranges: {
             '今日': [moment(), moment()],
             '近7天': [moment().subtract(6, 'days'), moment()],
@@ -60,8 +43,32 @@ $(function() {
             '本月': [moment().startOf('month'), moment().endOf('month')],
             '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         }
-    }, cb);
-    update_date_input(start, end);
+    });
+    $date_picker.on('apply.daterangepicker', function(ev, picker) {
+        var start_fmt = picker.startDate.format('YYYY-MM-DD');
+        var end_fmt = picker.endDate.format('YYYY-MM-DD');
+        $('#col-date .inputs-option').html(start_fmt + ' - ' + end_fmt);
+        $filter_form.find("input[name=date_start]").val(start_fmt);
+        $filter_form.find("input[name=date_end]").val(end_fmt);
+        $filter_form.submit();
+    }).on('cancel.daterangepicker', function(ev, picker) {
+        $filter_form.find("input[name=date_start]").val("");
+        $filter_form.find("input[name=date_end]").val("");
+        $('#col-date .inputs-option').html("所有日期");
+        $filter_form.submit();
+    });
+    //设置初始时间区间
+    var start = $("input[name=date_start]").val();
+    var end = $("input[name=date_end]").val();
+    if(start==="") {
+        $('#col-date .inputs-option').html("所有日期");
+    }
+    else {
+        $date_picker.data('daterangepicker').setStartDate(moment(start));
+        $date_picker.data('daterangepicker').setEndDate(moment(end));
+        $('#col-date .inputs-option').html(start + ' - ' + end);
+    }
+
 
     // -----------初始化提示框
     $('[data-toggle="tooltip"]').tooltip();
