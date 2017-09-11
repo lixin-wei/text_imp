@@ -1,8 +1,9 @@
 var $main_form = $("#main_form"),
     $file_input = $main_form.find("input[name=data]"),
     $upload_button = $("#upload_button"),
-    $title_list = $("#title_list"),
-    $info_box = $("#info_box");
+    $info_box = $("#info_box"),
+    $data_field_selectors = $("select.data-field-select"),
+    $submit_button = $("#submit_button");
 
 var map = {}; //数据映射关系
 var tabel = {}; //数据表
@@ -10,19 +11,10 @@ var tabel = {}; //数据表
 $upload_button.click(function () {
     $file_input.click();
 });
+//初始化select
+$data_field_selectors.selectpicker();
 
-//默认的select
-$default_select = $("<select/>")
-    .append($("<option/>", {disabled: "true", selected: "true"}).html("请选择数据域含义"))
-    .append("<option value='content'>评论文本（必选）</option>")
-    .append("<option value='review_date'>时间</option>")
-    .append("<option value='location'>地区</option>")
-    .append("<option value='version'>版本号</option>");
-//提交按钮
-$submit_button = $("<button/>", {
-    class: "btn btn-default"
-}).text("确定");
-
+//最终的提交
 $submit_button.click(function () {
     //TODO: 处理数据，ajax提交，php响应好，加载完后跳转
     var table_to_send = [];
@@ -48,6 +40,7 @@ $submit_button.click(function () {
         }
     }, "json");
 });
+
 //xls表格处理
 $file_input.change(function (e) {
     var f = $(this).prop("files")[0];
@@ -61,26 +54,35 @@ $file_input.change(function (e) {
             console.log(table);
             //$("#output").html(JSON.stringify(table, 2, 2));
             if(table.length) {
-                $title_list.empty();
-                map = {};
+                $data_field_selectors.empty();
+                var $option = $("<option/>").val("").text("空置");
+                $data_field_selectors.append($option);
                 for (var key in table[0]) if(table[0].hasOwnProperty(key)) {
-                    //生成数据域选择的下拉框
-                    var $label = $("<div/>", {class: "field-label"}).text(key);
-                    var $select = $default_select.clone().attr("name", key);
-                    var $temp_div = $("<div/>").append($label).append($select);
-                    $title_list.append($temp_div);
-                    //$select.selectpicker();
-                    //注册选择事件
-                    //TODO: 选择一个数据域后，禁用其他select的相应选项
-                    //TODO: 把select改成dropdown，美化一下
-                    $select.change(function () {
-                        map[$(this).attr("name")] = $(this).val();
-                        console.log(map);
-                    });
+                    //给select填充数据表中的标题
+                    $option = $("<option/>").val(key).text(key);
+                    $data_field_selectors.append($option);
                 }
+                $data_field_selectors.selectpicker("refresh");
             }
-            $title_list.append($submit_button);
         };
         reader.readAsBinaryString(f);
     }
+});
+
+//数据域select的选中事件
+$data_field_selectors.change(function () {
+    //如果选择了空，则删除相应的映射
+    if($(this).val() === "") {
+        for (var key in map) if (map.hasOwnProperty(key)) {
+            if(map[key] === $(this).attr("name")) {
+                delete map[key];
+                break;
+            }
+        }
+    }
+    else {
+        //否则添加相应映射
+        map[$(this).val()] = $(this).attr("name");
+    }
+    console.log(map);
 });

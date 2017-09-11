@@ -34,8 +34,25 @@
     <div class="panel panel-default">
         <div class="panel-heading">数据域映射关系选择</div>
         <div class="panel-body">
-            <div id="title_list">
+            <div class="data-field-box">
+                <div class="data-field-item">
+                    <label for="content">评论文本（必选）</label>
+                    <select name="content" id="content" class="data-field-select"></select>
+                </div>
+                <div class="data-field-item">
+                    <label for="version">版本号</label>
+                    <select name="version" id="version" class="data-field-select"></select>
+                </div>
+                <div class="data-field-item">
+                    <label for="location">所在地区</label>
+                    <select name="location" id="location" class="data-field-select"></select>
+                </div>
+                <div class="data-field-item">
+                    <label for="review_date">评论时间</label>
+                    <select name="review_date" id="review_date" class="data-field-select"></select>
+                </div>
             </div>
+            <button id="submit_button">确认上传</button>
             <div id="info_box"></div>
         </div>
     </div>

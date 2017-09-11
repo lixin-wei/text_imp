@@ -14,6 +14,18 @@ $res = array(
     "request_id" => $request_id
 );
 if (count($table)) {
+    //统计用户提供了哪些信息
+    $request_info = array(
+        "review_date" => 0,
+        "version" => 0,
+        "location" => 0
+    );
+    foreach ($table[0] as $key => $value) {
+        $request_info[$key] = 1;
+    }
+    $sql = "INSERT INTO request(id, version, location, review_date) VALUES ($request_id, {$request_info['version']}, {$request_info['location']}, {$request_info['review_date']})";
+    $db->query($sql);
+    //插入评论数据
     foreach ($table as $row) {
         $pre = "";
         $end = "";

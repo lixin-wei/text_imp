@@ -30,4 +30,7 @@ form {
   display: inline-block;
   margin: 0 10px; }
 
+.data-field-item label {
+  width: 150px; }
+
 /*# sourceMappingURL=index.css.map */
