@@ -21,10 +21,18 @@
         <!-- 导航栏内容 -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li <?php if ($file=="index.php") echo "class=active" ?> ><a href="index.php"><i class="fa fa-wpexplorer fa-fw"></i>首页</a></li>
-                <li <?php if ($file=="sentiment.php" || $file=="words.php" || $file=="version.php" || $file=="rating.php") echo "class=active" ?>><a href="sentiment.php"><i class="fa fa-area-chart fa-fw"></i>统计</a></li>
-                <li <?php if ($file=="review.php") echo "class=active" ?>><a href="review.php"><i class="fa fa-comments fa-fw"></i>评论</a></li>
-                <li <?php if ($file=="setting.php") echo "class=active" ?>><a href="setting.php"><i class="fa fa-cog fa-fw"></i>设置</a></li>
+                <li <?php if ($file=="index.php") echo "class=active" ?> >
+                    <a href="index.php"><i class="fa fa-wpexplorer fa-fw"></i>首页</a>
+                </li>
+                <li <?php if ($file=="sentiment.php" || $file=="words.php" || $file=="version.php" || $file=="rating.php") echo "class=active" ?>>
+                    <a href="sentiment.php"><i class="fa fa-area-chart fa-fw"></i>统计</a>
+                </li>
+                <li <?php if ($file=="review.php") echo "class=active" ?>>
+                    <a href="review.php"><i class="fa fa-comments fa-fw"></i>评论</a>
+                </li>
+                <li <?php if ($file=="setting.php") echo "class=active" ?>>
+                    <a href="setting.php"><i class="fa fa-cog fa-fw"></i>设置</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

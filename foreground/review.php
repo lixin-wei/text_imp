@@ -37,7 +37,7 @@
             <div class="visible-xs">
                 <div class="content-miniinputs">
                     <button class="btn btn-default content-miniinputs-filter">                    
-                        <i class="fa fa-filter ">&nbsp筛选</i>  
+                        <i class="fa fa-filter ">&nbsp筛选</i>
                     </button> 
                 </div>                
             </div>
@@ -115,30 +115,27 @@
 				<div class="row">
 			    	<div class="review-basic-attributes col-sm-2">
                         <span class="review-country"><i class="fa fa-globe review-logo"></i>
-                            地区：
                             <?php
                             if($request_info['location'])
                                 echo $review[$i]->location;
                             else
-                                echo "缺少数据"
+                                echo "缺少地区数据"
                             ?>
                         </span>
                         <span class="review-version"><i class="fa fa-bookmark review-logo"></i>
-                            版本：
                             <?php
                             if($request_info['version'])
                                 echo $review[$i]->version;
                             else
-                                echo "缺少数据"
+                                echo "缺少版本数据"
                             ?>
                         </span>
                         <span class="review-version"><i class="fa fa-clock-o review-logo"></i>
-                            时间：
                             <?php
                             if($request_info['review_date'])
                                 echo $review[$i]->review_date;
                             else
-                                echo "缺少数据"
+                                echo "缺少时间数据"
                             ?>
                         </span>
 			    	</div>

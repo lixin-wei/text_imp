@@ -1,11 +1,9 @@
 <?php
+require_once "lib/mylib/request_check.php";
 require_once("lib/mylib/db_info.php");
 require_once "lib/mylib/request_info.php";
 
-$request_id = 0;
-if(isset($_GET['request_id'])) {
-    $request_id = intval($_GET['request_id']);
-}
+$request_id = $_SESSION['request_id'];
 $location = "";
 if (isset($_GET['location'])) { // country
     $location = $_GET['location'];

@@ -43,4 +43,7 @@ else {
     $res['info'] = "数据为空";
 }
 
+if($res['error'] == false) {
+    $_SESSION['request_id'] = $request_id;
+}
 echo json_encode($res);
