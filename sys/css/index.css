@@ -33,4 +33,7 @@ form {
 .data-field-item label {
   width: 150px; }
 
+#data-field-panel {
+  display: none; }
+
 /*# sourceMappingURL=index.css.map */

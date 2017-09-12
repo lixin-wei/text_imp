@@ -30,8 +30,8 @@
     <form action="" id="main_form">
         <input type="file" name="data">
     </form>
-    <button class="btn btn-default" id="upload_button">上传数据</button>
-    <div class="panel panel-default">
+    <button class="btn btn-default" id="upload_button">选择文件</button>
+    <div class="panel panel-default" id="data-field-panel">
         <div class="panel-heading">数据域映射关系选择</div>
         <div class="panel-body">
             <div class="data-field-box">
@@ -54,6 +54,7 @@
             </div>
             <div id="info_box" class="text-danger"></div>
             <button id="submit_button" class="btn btn-default">确认上传</button>
+            <button id="reset_button" class="btn btn-default">重新选择文件</button>
         </div>
     </div>
 

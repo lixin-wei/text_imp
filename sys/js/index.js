@@ -3,7 +3,9 @@ var $main_form = $("#main_form"),
     $upload_button = $("#upload_button"),
     $info_box = $("#info_box"),
     $data_field_selectors = $("select.data-field-select"),
-    $submit_button = $("#submit_button");
+    $submit_button = $("#submit_button"),
+    $data_field_panel = $("#data-field-panel"),
+    $reset_button = $("#reset_button");
 
 var map = {}; //数据映射关系
 var tabel = {}; //数据表
@@ -41,7 +43,11 @@ $upload_button.click(function () {
 
 //初始化select
 $data_field_selectors.selectpicker();
-
+//重新选择文件
+$reset_button.click(function () {
+    $upload_button.fadeIn();
+    $data_field_panel.fadeOut();
+});
 //最终的提交
 $submit_button.click(function () {
     // 检查content域是否已经选择
@@ -97,6 +103,9 @@ $file_input.change(function (e) {
                 }
                 $data_field_selectors.selectpicker("refresh");
             }
+            $upload_button.fadeOut();
+            $data_field_panel.fadeIn();
+            $file_input.val("");
         };
         reader.readAsBinaryString(f);
     }
