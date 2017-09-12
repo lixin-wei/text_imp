@@ -14,7 +14,33 @@ form {
     width: 150px;
   }
 }
+.data-field-item {
+  margin-bottom: 10px;
+  label {
+    padding-top: 8px;
+  }
+}
+.subtitle {
+  margin-bottom: 30px;
+  margin-top: 24px;
+  padding-left: 16px;
+  color: #555;
+}
+#index_logo {
+  margin-top: 10px;
+}
+#col_left {
+  border-right: 1px solid #777;
+  padding-bottom: 75px;
+  padding-right: 35px;
+  //background: #eee;
+  //bottom: 0;
+}
 
-#data-field-panel {
-  display: none;
+.container {
+  margin-top: 117px !important;
+}
+
+#index_right {
+  margin-left: 5%;
 }

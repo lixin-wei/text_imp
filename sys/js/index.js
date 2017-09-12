@@ -9,7 +9,7 @@ var $main_form = $("#main_form"),
 
 var map = {}; //数据映射关系
 var tabel = {}; //数据表
-
+var file_name = null;
 map.delete_by_value = function (value) {
     for (var key in map) if (map.hasOwnProperty(key)) {
         if(map[key] === value) {
@@ -36,17 +36,26 @@ map.has_value = function (value) {
     }
     return false;
 };
-
+//选择文件
 $upload_button.click(function () {
     $file_input.click();
 });
-
+//选择文件按钮，鼠标悬停时改变内容
+$upload_button.hover(function () {
+    $(this).text("选择文件");
+}).mouseout(function () {
+    if (file_name !== null) {
+        $(this).text(file_name);
+    }
+});
 //初始化select
-$data_field_selectors.selectpicker();
+$data_field_selectors.selectpicker({
+    width: "100%"
+});
 //重新选择文件
 $reset_button.click(function () {
-    $upload_button.fadeIn();
-    $data_field_panel.fadeOut();
+    //$upload_button.fadeIn();
+    //$data_field_panel.fadeOut();
 });
 //最终的提交
 $submit_button.click(function () {
@@ -85,7 +94,7 @@ $file_input.change(function (e) {
     var f = $(this).prop("files")[0];
     if(f !== undefined) {
         var reader = new FileReader();
-        var name = f.name;
+        file_name = f.name;
         reader.onload = function(e) {
             var data = e.target.result;
             var cfb = XLSX.read(data, {type: 'binary'});
@@ -101,10 +110,10 @@ $file_input.change(function (e) {
                     $option = $("<option/>").val(key).text(key);
                     $data_field_selectors.append($option);
                 }
-                $data_field_selectors.selectpicker("refresh");
             }
-            $upload_button.fadeOut();
-            $data_field_panel.fadeIn();
+            $data_field_selectors.removeAttr("disabled");
+            $data_field_selectors.selectpicker("refresh");
+            $upload_button.text(file_name);
             $file_input.val("");
         };
         reader.readAsBinaryString(f);

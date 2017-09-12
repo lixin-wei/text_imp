@@ -30,33 +30,75 @@
     <form action="" id="main_form">
         <input type="file" name="data">
     </form>
-    <button class="btn btn-default" id="upload_button">选择文件</button>
-    <div class="panel panel-default" id="data-field-panel">
-        <div class="panel-heading">数据域映射关系选择</div>
-        <div class="panel-body">
+    <div class="row">
+        <div class="col-md-6" id="col_left">
+            <h2>第一步，选择数据文件</h2>
+            <hr>
+            <button class="btn btn-default btn-block" id="upload_button">选择文件</button>
+            <div id="file_info"></div>
+
+            <h2>第二步，匹配数据列的含义</h2>
+            <hr>
             <div class="data-field-box">
-                <div class="data-field-item">
-                    <label for="content">评论文本（必选）</label>
-                    <select name="content" id="content" class="data-field-select"></select>
+                <div class="data-field-item row">
+                    <div class="col-md-5">
+                        <label for="content">评论文本（必选）</label>
+                    </div>
+                    <div class="col-md-7">
+                        <select name="content" id="content" class="data-field-select" disabled>
+                            <option value="">请先选择文件</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="data-field-item">
-                    <label for="version">版本号</label>
-                    <select name="version" id="version" class="data-field-select"></select>
+                <div class="data-field-item row">
+                    <div class="col-md-5">
+                        <label for="version">版本号</label>
+                    </div>
+                    <div class="col-md-7">
+                        <select name="version" id="version" class="data-field-select" disabled>
+                            <option value="">请先选择文件</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="data-field-item">
-                    <label for="location">所在地区</label>
-                    <select name="location" id="location" class="data-field-select"></select>
+                <div class="data-field-item row">
+                    <div class="col-md-5">
+                        <label for="location">所在地区</label>
+                    </div>
+                    <div class="col-md-7">
+                        <select name="location" id="location" class="data-field-select" disabled>
+                            <option value="">请先选择文件</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="data-field-item">
-                    <label for="review_date">评论时间</label>
-                    <select name="review_date" id="review_date" class="data-field-select"></select>
+                <div class="data-field-item row">
+                    <div class="col-md-5">
+                        <label for="review_date">评论时间</label>
+                    </div>
+                    <div class="col-md-7">
+                        <select name="review_date" id="review_date" class="data-field-select" disabled>
+                            <option value="">请先选择文件</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div id="info_box" class="text-danger"></div>
-            <button id="submit_button" class="btn btn-default">确认上传</button>
-            <button id="reset_button" class="btn btn-default">重新选择文件</button>
+
+
+            <h2>第三步，上传数据</h2>
+            <hr>
+            <button id="submit_button" class="btn btn-default btn-block">确认上传</button>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <img src="img/index/index-logo.gif" class="" alt="logo" id="index_logo">
+                <div class="subtitle text-center">数据分析师的得力助手，您最贴心的评论分析工具</div>
+                <img src="img/index/index-right.gif" class="" alt="poster" id="index_right">
+            </div>
+
         </div>
     </div>
+
+
 
 </div>
 </body>
