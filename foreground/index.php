@@ -52,8 +52,8 @@
                     <select name="review_date" id="review_date" class="data-field-select"></select>
                 </div>
             </div>
-            <button id="submit_button">确认上传</button>
-            <div id="info_box"></div>
+            <div id="info_box" class="text-danger"></div>
+            <button id="submit_button" class="btn btn-default">确认上传</button>
         </div>
     </div>
 

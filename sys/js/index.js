@@ -8,15 +8,48 @@ var $main_form = $("#main_form"),
 var map = {}; //数据映射关系
 var tabel = {}; //数据表
 
+map.delete_by_value = function (value) {
+    for (var key in map) if (map.hasOwnProperty(key)) {
+        if(map[key] === value) {
+            delete map[key];
+            break;
+        }
+    }
+};
+
+map.find_by_value = function (value) {
+    for (var key in map) if (map.hasOwnProperty(key)) {
+        if(map[key] === value) {
+            return key;
+        }
+    }
+    return null;
+};
+
+map.has_value = function (value) {
+    for (var key in map) if (map.hasOwnProperty(key)) {
+        if(map[key] === value) {
+            return true;
+        }
+    }
+    return false;
+};
+
 $upload_button.click(function () {
     $file_input.click();
 });
+
 //初始化select
 $data_field_selectors.selectpicker();
 
 //最终的提交
 $submit_button.click(function () {
-    //TODO: 处理数据，ajax提交，php响应好，加载完后跳转
+    // 检查content域是否已经选择
+    if(!map.has_value("content")) {
+        $info_box.text("请选择评论文本所对应的数据域！");
+        return;
+    }
+    // 处理数据，ajax提交，php响应好，加载完后跳转
     var table_to_send = [];
     table.forEach(function (row) {
         var r = {};
@@ -71,18 +104,25 @@ $file_input.change(function (e) {
 
 //数据域select的选中事件
 $data_field_selectors.change(function () {
-    //如果选择了空，则删除相应的映射
-    if($(this).val() === "") {
-        for (var key in map) if (map.hasOwnProperty(key)) {
-            if(map[key] === $(this).attr("name")) {
-                delete map[key];
-                break;
-            }
-        }
+    var name = $(this).attr("name");
+    var val = $(this).val();
+    var origin_item = map.find_by_value(name);
+    //则删除原有映射
+    map.delete_by_value(name);
+    //添加相应映射
+    if(val !== "")
+        map[val] = name;
+    //解除其他下拉框里的禁用
+    if(origin_item !== null) {
+        $("option[value="+ origin_item +"]").removeAttr("disabled");
     }
-    else {
-        //否则添加相应映射
-        map[$(this).val()] = $(this).attr("name");
+    //禁用其他下拉框的相应选项
+    if (val !== "") {
+        $("option[value="+ val +"]").attr("disabled", "true");
+        $(this).find("option[value="+ val +"]").removeAttr("disabled");
+        $(this).val(val);
     }
+    $data_field_selectors.selectpicker("refresh");
+
     console.log(map);
 });
