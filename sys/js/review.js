@@ -47,26 +47,26 @@ $(function() {
     $date_picker.on('apply.daterangepicker', function(ev, picker) {
         var start_fmt = picker.startDate.format('YYYY-MM-DD');
         var end_fmt = picker.endDate.format('YYYY-MM-DD');
-        $('#col-date .inputs-option').html(start_fmt + ' - ' + end_fmt);
+        $date_picker.html("<i class=\"fa fa-calendar input-icon\"></i>" + start + " - " + end);
         $filter_form.find("input[name=date_start]").val(start_fmt);
         $filter_form.find("input[name=date_end]").val(end_fmt);
         $filter_form.submit();
     }).on('cancel.daterangepicker', function(ev, picker) {
         $filter_form.find("input[name=date_start]").val("");
         $filter_form.find("input[name=date_end]").val("");
-        $('#col-date .inputs-option').html("所有日期");
+        $date_picker.html("<i class=\"fa fa-calendar input-icon\"></i>所有日期");
         $filter_form.submit();
     });
     //设置初始时间区间
     var start = $("input[name=date_start]").val();
     var end = $("input[name=date_end]").val();
     if(start==="") {
-        $('#col-date .inputs-option').html("所有日期");
+        $date_picker.html("<i class=\"fa fa-calendar input-icon\"></i>所有日期");
     }
     else {
         $date_picker.data('daterangepicker').setStartDate(moment(start));
         $date_picker.data('daterangepicker').setEndDate(moment(end));
-        $('#col-date .inputs-option').html(start + ' - ' + end);
+        $date_picker.html("<i class=\"fa fa-calendar input-icon\"></i>" + start + " - " + end);
     }
 
 
