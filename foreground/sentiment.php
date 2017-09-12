@@ -75,18 +75,7 @@
                     </div>
                 </div>
                 
-                <div class="row">                    
-                    <div class="col-sm-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                              评论星级   
-                              <i class="fa fa-question-circle panel-tips" data-toggle="tooltip" title="平均评分随着时间变化，从评论中计算的到，具体查看左侧栏的评分栏目"></i>
-                            </div>
-                            <div class="panel-body">
-                                <div id="rating" class="echarts"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -98,13 +87,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">                    
                     <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                              版本细节
-                              <i class="fa fa-question-circle panel-tips" data-toggle="tooltip" title="查看所选时间段内每个应用程序版本的百分比。"></i>
+                                版本细节
+                                <i class="fa fa-question-circle panel-tips" data-toggle="tooltip" title="查看所选时间段内每个应用程序版本的百分比。"></i>
                             </div>
                             <div class="panel-body">
                                 <div id="version" class="echarts"></div>
