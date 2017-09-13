@@ -55,102 +55,227 @@ $(function() {
 
     // EChart
     // wechat 微信评论
+    option1 = {
+        xAxis: [{
+            show: false,
+            type: 'category',
+            boundaryGap: false,
+            data: [
+
+                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
+                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
+                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
+                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
+            ]
+        }],
+        yAxis: [{
+            show: false,
+            type: 'value'
+                // max: 100
+        }],
+        series: [{
+            name: '趋势',
+            type: 'line',
+            stack: '总量',
+            symbol: 'none',
+            areaStyle: {
+                normal: {
+                    color: 'rgb(240, 249, 254)'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: 'rgb(78, 177, 237)'
+                        // 字条颜色
+                }
+            },
+            data: [
+                50, 45, 40, 39, 45, 30, 29, 28, 25, 24,
+                30, 28, 29, 30, 50, 48, 45, 45, 30, 25,
+                28, 27, 50, 52, 30, 25, 26, 27, 30, 40,
+                50, 80, 70, 60, 40
+            ]
+        }]
+    };
+    option2 = {
+        xAxis: [{
+            show: false,
+            type: 'category',
+            boundaryGap: false,
+            data: [
+
+                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
+                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
+                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
+                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
+            ]
+        }],
+        yAxis: [{
+            show: false,
+            type: 'value'
+            // max: 100
+        }],
+        series: [{
+            name: '趋势',
+            type: 'line',
+            stack: '总量',
+            symbol: 'none',
+            areaStyle: {
+                normal: {
+                    color: 'rgb(240, 249, 254)'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: 'rgb(78, 177, 237)'
+                    // 字条颜色
+                }
+            },
+            data: [
+                50, 45, 40, 39,25, 26, 27, 30, 40,
+                50, 80, 70, 60, 40, 45, 30, 29, 28,
+                30, 28, 29, 30, 50, 48, 45, 45, 30, 25,
+                28, 27, 50, 52, 30,25, 24
+            ]
+        }]
+    };
+    option3 = {
+        xAxis: [{
+            show: false,
+            type: 'category',
+            boundaryGap: false,
+            data: [
+
+                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
+                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
+                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
+                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
+            ]
+        }],
+        yAxis: [{
+            show: false,
+            type: 'value'
+            // max: 100
+        }],
+        series: [{
+            name: '趋势',
+            type: 'line',
+            stack: '总量',
+            symbol: 'none',
+            areaStyle: {
+                normal: {
+                    color: 'rgb(240, 249, 254)'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: 'rgb(78, 177, 237)'
+                    // 字条颜色
+                }
+            },
+            data: [
+                50, 45, 40, 39,25, 26, 27, 30, 40,
+                50, 80, 70, 60, 40, 45, 30, 25,
+                28, 27, 50, 52, 30,25, 24, 45, 30, 29, 28,
+                30, 28, 29, 30, 50, 48, 45
+            ]
+        }]
+    };
+    option4 = {
+        xAxis: [{
+            show: false,
+            type: 'category',
+            boundaryGap: false,
+            data: [
+
+                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
+                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
+                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
+                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
+            ]
+        }],
+        yAxis: [{
+            show: false,
+            type: 'value'
+            // max: 100
+        }],
+        series: [{
+            name: '趋势',
+            type: 'line',
+            stack: '总量',
+            symbol: 'none',
+            areaStyle: {
+                normal: {
+                    color: 'rgb(240, 249, 254)'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: 'rgb(78, 177, 237)'
+                    // 字条颜色
+                }
+            },
+            data: [
+                60, 40, 45, 30, 25,
+                28, 27, 50, 52, 30,25, 24, 45, 30, 29, 28,
+                30, 28, 29, 30, 50, 48, 45,50, 45, 40, 39,25, 26, 27, 30, 40,
+                50, 80, 70
+            ]
+        }]
+    };
+    option5 = {
+        xAxis: [{
+            show: false,
+            type: 'category',
+            boundaryGap: false,
+            data: [
+
+                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
+                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
+                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
+                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
+            ]
+        }],
+        yAxis: [{
+            show: false,
+            type: 'value'
+            // max: 100
+        }],
+        series: [{
+            name: '趋势',
+            type: 'line',
+            stack: '总量',
+            symbol: 'none',
+            areaStyle: {
+                normal: {
+                    color: 'rgb(240, 249, 254)'
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: 'rgb(78, 177, 237)'
+                    // 字条颜色
+                }
+            },
+            data: [
+                30, 25, 26, 27, 50, 45, 40, 39, 45, 30, 29, 28, 25, 24,
+                30, 28, 29, 30, 50, 48, 45, 45, 30, 25,
+                28, 27, 50, 52, 30, 40,
+                50, 80, 70, 60, 40
+            ]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
     var trendchart = echarts.init(document.getElementById('trend-1'));
-    option = {
-        xAxis: [{
-            show: false,
-            type: 'category',
-            boundaryGap: false,
-            data: [
-
-                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
-                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
-                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
-                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
-            ]
-        }],
-        yAxis: [{
-            show: false,
-            type: 'value'
-                // max: 100
-        }],
-        series: [{
-            name: '趋势',
-            type: 'line',
-            stack: '总量',
-            symbol: 'none',
-            areaStyle: {
-                normal: {
-                    color: 'rgb(240, 249, 254)'
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: 'rgb(78, 177, 237)'
-                        // 字条颜色
-                }
-            },
-            data: [
-                50, 45, 40, 39, 45, 30, 29, 28, 25, 24,
-                30, 28, 29, 30, 50, 48, 45, 45, 30, 25,
-                28, 27, 50, 52, 30, 25, 26, 27, 30, 40,
-                50, 80, 70, 60, 40
-            ]
-        }]
-    };
-    // 使用刚指定的配置项和数据显示图表。  
-    trendchart.setOption(option);
-
+    trendchart.setOption(option1);
     var trendchart = echarts.init(document.getElementById('trend-2'));
-    option = {
-        xAxis: [{
-            show: false,
-            type: 'category',
-            boundaryGap: false,
-            data: [
-
-                '25Feb', '26Feb', '27Feb', '28Feb', '29Feb',
-                '1Mar', '2Mar', '3Mar', '4Mar', '5Mar', '6Mar', '7Mar', '8Mar', '9Mar', '10Mar',
-                '11Mar', '12Mar', '13Mar', '14Mar', '15Mar', '16Mar', '17Mar', '18Mar', '19Mar', '20Mar',
-                '21Mar', '22Mar', '23Mar', '24Mar', '25Mar', '26Mar', '27Mar', '28Mar', '29Mar', '30Mar',
-            ]
-        }],
-        yAxis: [{
-            show: false,
-            type: 'value'
-                // max: 100
-        }],
-        series: [{
-            name: '趋势',
-            type: 'line',
-            stack: '总量',
-            symbol: 'none',
-            areaStyle: {
-                normal: {
-                    color: 'rgb(240, 249, 254)'
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: 'rgb(78, 177, 237)'
-                        // 字条颜色
-                }
-            },
-            data: [
-                50, 45, 40, 39, 45, 30, 29, 28, 25, 24,
-                30, 28, 29, 30, 50, 48, 45, 45, 30, 25,
-                28, 27, 50, 52, 30, 25, 26, 27, 30, 40,
-                50, 80, 70, 60, 40
-            ]
-        }]
-    };
-    trendchart.setOption(option);
+    trendchart.setOption(option2);
     var trendchart = echarts.init(document.getElementById('trend-3'));
-    trendchart.setOption(option);
+    trendchart.setOption(option3);
     var trendchart = echarts.init(document.getElementById('trend-4'));
-    trendchart.setOption(option);
+    trendchart.setOption(option4);
     var trendchart = echarts.init(document.getElementById('trend-5'));
-    trendchart.setOption(option);
+    trendchart.setOption(option5);
     // 使用刚指定的配置项和数据显示图表。  
 
 });
