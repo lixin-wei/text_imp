@@ -27,12 +27,17 @@
 <body>
 <?php require("foreground/nav.php") ?>
 <div class="container">
+    <!--  加载遮罩层  -->
+    <div id="loading">
+        <div class="fa fa-spinner fa-spin"></div>
+    </div>
     <form action="" id="main_form">
         <input type="file" name="data">
     </form>
     <div class="row">
         <div class="col-md-6" id="col_left">
             <h2>第一步，选择数据文件</h2>
+
             <hr>
             <button class="btn btn-default btn-block" id="upload_button">选择文件</button>
             <div id="file_info"></div>

@@ -44,3 +44,21 @@ form {
 #index_right {
   margin-left: 5%;
 }
+
+#loading {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  background: black;
+  z-index: 100;
+  text-align: center;
+  div {
+    font-size: 100pt;
+    position: relative; top: 50%; transform: translateY(-50%);
+    color: #ccc;
+  }
+}

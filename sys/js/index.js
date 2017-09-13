@@ -5,7 +5,8 @@ var $main_form = $("#main_form"),
     $data_field_selectors = $("select.data-field-select"),
     $submit_button = $("#submit_button"),
     $data_field_panel = $("#data-field-panel"),
-    $reset_button = $("#reset_button");
+    $reset_button = $("#reset_button"),
+    $loading = $("#loading");
 
 var map = {}; //数据映射关系
 var tabel = {}; //数据表
@@ -76,9 +77,13 @@ $submit_button.click(function () {
         table_to_send.push(r);
     });
     console.log(table_to_send);
+    //显示加载遮罩层
+    $loading.show();
     $.post("action/upload-reviews.php", {
         table: table_to_send
     },function (res) {
+        //去除加载遮罩层
+        $loading.hide();
         $info_box.empty();
         if(res.error) {
             $info_box.text(res.info);
