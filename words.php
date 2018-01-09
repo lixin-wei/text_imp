@@ -34,7 +34,7 @@
     /* Get the selected app info END */
 
     /* Get hot word START */
-    $sql = "SELECT word, COUNT(id) AS num FROM cut_word WHERE app_id='$app_id' GROUP BY word ORDER BY num DESC";
+    $sql = "SELECT word, COUNT(id) AS num FROM cut_word WHERE app_id = 0 GROUP BY word ORDER BY num DESC";
     $result = $db->query($sql);
 
     if ($result) $word_cnt = $result->num_rows;
@@ -46,7 +46,8 @@
     for ($i=0; $i<$word_cnt; ++$i) {
     	$row = $result->fetch_object();
     	$word[] = new Word();
-    	$word[$i]->s = $row->word;
+    	$word[$i]->s = htmlentities($row->word);
+    	if(strlen($word[$i]->s)<3) $word[$i]->s = "";
     	$word[$i]->t = $row->num * 71; //太少了不好看，乘一个素数
 //    	echo $word[$i]->s.$word[$i]->t;
     }
